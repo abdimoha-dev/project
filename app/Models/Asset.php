@@ -6,6 +6,22 @@ use Illuminate\Database\Eloquent\Model;
 
 class Asset extends Model
 {
-    protected $table='assets';
-    protected $guarded=[];
+    protected $table = 'assets';
+    protected $guarded = [];
+
+    protected $fillable = [
+        'fillerId',
+        'categoryId',
+        'name',
+        'quantity',
+        'brand',
+        'serialNumber',
+    ];
+
+    public function user()
+    {
+        return $this->belongsTo('App\User', 'fillerId', 'id');
+
+    }
 }
+

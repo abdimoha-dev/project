@@ -25,4 +25,5 @@ $factory->define(App\User::class, function (Faker $faker) {
         'role'           => array_random(['ADMIN', 'EMPLOYEE']),
         'remember_token' => str_random(10),
     ];
+
 });

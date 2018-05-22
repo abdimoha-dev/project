@@ -5,13 +5,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## 0.1.2
 ### Added
-
+*
 
 ## 0.1.1 - 2018-05-22
 ### Added
+* User login
+* User seeders
 
 
-## 0.1.0 - 2018-05-18
+## 0.1.0 - 2018-05-22
 ### Added
 * Changelog
 * ReadMe file
