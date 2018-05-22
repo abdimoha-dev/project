@@ -14,7 +14,7 @@ class User extends Authenticatable
      *
      * @var array
      */
-    protected $guarded=[];
+    protected $guarded = [];
     protected $fillable = [
         'name',
         'employeeId',
@@ -32,4 +32,9 @@ class User extends Authenticatable
         'password',
         'remember_token',
     ];
+
+    public function asset()
+    {
+        return $this->hasMany('App\Models\Asset','fillerId','id');
+    }
 }

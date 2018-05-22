@@ -18,3 +18,15 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+###############################################################
+######################ADMIN####################################
+###############################################################
+
+Route::prefix('admin')->group(function () {
+    Route::get('categories','Admin\StockController@addCategory');
+    Route::post('categories','Admin\StockController@saveCategory');
+
+    Route::get('stock', 'Admin\StockController@showStockForm');
+    Route::post('stock', 'Admin\StockController@saveStock');
+});
