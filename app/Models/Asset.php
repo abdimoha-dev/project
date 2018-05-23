@@ -15,7 +15,6 @@ class Asset extends Model
         'name',
         'quantity',
         'brand',
-        'serialNumber',
     ];
 
     public function user()

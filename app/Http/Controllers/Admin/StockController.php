@@ -26,9 +26,8 @@ class StockController extends Controller
 //       dd($request->toArray());
         Asset::create([
             'fillerId'     => auth()->user()->id,
-            'categoryId'   => $request->categoryId,
+            'categoryId'   => $request->category,
             'name'         => $request->name,
-            'serialNumber' => $request->serialNumber,
             'brand'        => $request->brand,
             'quantity'     => $request->quantity,
         ]);

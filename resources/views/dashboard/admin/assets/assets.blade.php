@@ -13,7 +13,7 @@
                 <option value="">Select Category</option>
                 @foreach($assets as $asset)
                     {{ $asset->county_code }}
-                    <option value="{{$asset->id}}">{{$asset->name}}</option>
+                    <option value="{{$asset->name}}">{{$asset->name}}</option>
                 @endforeach
 
             </select>
@@ -29,19 +29,6 @@
                     </p>
                 @endif
             </div>
-        </div>
-
-        <div class="col-md-4">
-            <div class="form-group">
-                {{ Form::label('serialNumber','Serial Number')  }}
-                {{ Form::text('serialNumber',old('serialNumber'), ['class'=>'form-control ' ]) }}
-                @if($errors->has('serialNumber'))
-                    <p class="help-block text-danger">
-                        <i class="fa fa-exclamation-triangle fa-fw"></i> {{ $errors->first('serialNumber') }}
-                    </p>
-                @endif
-            </div>
-
         </div>
         <div class="col-md-4">
 
