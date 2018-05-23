@@ -11,6 +11,14 @@ use App\Http\Controllers\Controller;
 
 class StockController extends Controller
 {
+    /**
+     * show categories form
+     */
+    public function addCategory()
+    {
+        return view('dashboard.admin.assets.category');
+    }
+
     public function showStockForm()
     {
         return view('dashboard.admin.assets.assets', [
@@ -23,7 +31,6 @@ class StockController extends Controller
      */
     public function saveStock(StockRequest $request)
     {
-//       dd($request->toArray());
         Asset::create([
             'fillerId'     => auth()->user()->id,
             'categoryId'   => $request->category,
@@ -33,13 +40,6 @@ class StockController extends Controller
         ]);
     }
 
-    /**
-     * show categories form
-     */
-    public function addCategory()
-    {
-        return view('dashboard.admin.assets.category');
-    }
 
     /**
      *
