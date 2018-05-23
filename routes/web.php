@@ -37,3 +37,8 @@ Route::prefix('admin')->group(function () {
     Route::post('assign/{userId}', 'Admin\DistributeController@distribute');
 
 });
+
+Route::prefix('employee')->group(function (){
+    Route::get('myitems','Employee\AssetController@showMyAssets');
+
+});
