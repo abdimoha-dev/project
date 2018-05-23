@@ -42,4 +42,11 @@ class  DistributeController extends Controller
         ]);
 
     }
+
+    public function showAssignedAssets()
+    {
+        return view('dashboard/admin/assets/assignedAssets',[
+            'assets'=>Assigned::get(),
+        ]);
+    }
 }

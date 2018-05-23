@@ -36,10 +36,13 @@ Route::prefix('admin')->group(function () {
     Route::get('assign/{userId}', 'Admin\DistributeController@showAssignForm');
     Route::post('assign/{userId}', 'Admin\DistributeController@distribute');
 
-    //show all assets borrow requests
-    Route::get('borrow/requests','Admin\AssetController@showBorrowRequests');
+    //show assigned assets
+    Route::get('assets/assigned', 'Admin\DistributeController@showAssignedAssets');
 
-});
+    //show all assets borrow requests
+    Route::get('borrow/requests', 'Admin\AssetController@showBorrowRequests');
+
+    Route::get('generate-pdf', 'PdfGenerateController@pdfview')->name('generate-pdf');});
 
 Route::prefix('employee')->group(function () {
     Route::get('myitems', 'Employee\AssetController@showMyAssets');
@@ -48,3 +51,5 @@ Route::prefix('employee')->group(function () {
     Route::post('borrow', 'Employee\AssetController@saveAsset');
 
 });
+
+
