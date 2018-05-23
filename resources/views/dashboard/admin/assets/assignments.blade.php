@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
     <div class="form-group">
-{{ Form::open(['url'=>'admin/assign/{userId}', 'role' =>'form'])  }}
+{{ Form::open(['url'=>'admin/assign', 'role' =>'form'])  }}
 @csrf
 <div class="box-body">
 
@@ -18,9 +18,10 @@
             </select>
         </div>
 
+        {!! Form::hidden('user_id', $userId) !!}
         <div class="col-md-4">
             <label>Item:</label><br />
-            <select name="itemName" class="dropdown-menu">
+            <select name="itemName" class="dropdown">
                 <option value="">Select Item</option>
                 @foreach($assets as $asset)
                     {{ $asset->name }}

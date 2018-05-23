@@ -1,12 +1,7 @@
-<html>
-<head>
-    <title>Assets</title>
-    <a href="{{ url('admin/pdf')}}">Download PDF</a>
+@extends('layouts.app')
+@section('content')
 
-</head>
-
-<body>
-<table>
+    <table>
     <tr>
         <th> Category</th>
         <th>Item</th>
@@ -21,7 +16,10 @@
             <td>{{$asset->serialNumber}}</td>
             <td>{{$asset->employeeId}}</td>
         </tr>
+
         @endforeach
 </table>
-</body>
-</html>
+    <a href="{{ url('admin/pdf')}}">Download PDF</a>
+
+@endsection
+

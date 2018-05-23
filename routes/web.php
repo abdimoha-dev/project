@@ -35,7 +35,7 @@ Route::prefix('admin')->group(function () {
     Route::get('employees', 'Admin\DistributeController@showAllUser');
 //assign to specific user
     Route::get('assign/{userId}', 'Admin\DistributeController@showAssignForm');
-    Route::post('assign/{userId}', 'Admin\DistributeController@distribute');
+    Route::post('assign', 'Admin\DistributeController@distribute');
 
     //show assigned assets
     Route::get('assets/assigned', 'Admin\DistributeController@showAssignedAssets');
