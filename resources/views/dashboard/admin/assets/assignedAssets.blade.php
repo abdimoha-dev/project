@@ -1,10 +1,5 @@
-<html>
-<head>
-    <title> Assigned Assets</title>
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-</head>
-<body>
-
+@extends('layouts.app')
+@section('content')
 <a href="{{ route('generate-pdf',['download'=>'pdf']) }}">Download PDF</a>
 <table class="table table-condensed">
     <thead>
@@ -16,7 +11,6 @@
     </tr>
     </thead>
     <tbody>
-
     @if(count($assets) > 0)
         @foreach ($assets as $asset)
             <tr>
@@ -32,4 +26,4 @@
     @endif
     </tbody>
 </table>
-</body>
+@endsection

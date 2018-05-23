@@ -34,5 +34,6 @@ class AssetController extends Controller
             'urgency'    => $request->urgency,
         ]);
 
+        return redirect('home')->with(session()->flash('success-message', ['Details Added Successfull ']));
     }
 }

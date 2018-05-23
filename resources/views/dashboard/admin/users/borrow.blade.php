@@ -1,8 +1,5 @@
-<html>
-<head>
-    <title> All Employees</title>
-</head>
-<body>
+@extends('layouts.app')
+@section('content')
 <table class="table table-condensed">
     <thead>
     <tr>
@@ -30,4 +27,4 @@
     @endif
     </tbody>
 </table>
-</body>
+@endsection

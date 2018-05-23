@@ -1,11 +1,10 @@
-<head>
-    <title>Request Item</title>
-</head>
-<body>
+@extends('layouts.app')
+@section('content')
+    <div class="form-group">
 {{ Form::open(['url'=>'employee/borrow', 'role' =>'form'])  }}
 @csrf
 <div class="box-body">
-    <div class="row">
+    <div class="col-md-4">
         <h3 class="box-title">Request Asset</h3>
         <div class="col-md-4">
             <label>Category:</label><br />
@@ -51,4 +50,5 @@
 </div>
 
 {{ Form::close() }}
-</body>
+    </div>
+@endsection

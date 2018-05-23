@@ -1,8 +1,5 @@
-<head>
-    <title>Categories</title>
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-</head>
-<body>
+@extends('layouts.app')
+@section('content')
 {{ Form::open(['url'=>'admin/categories', 'role' =>'form'])  }}
 @csrf
 <div class="box-body">
@@ -27,5 +24,5 @@
     </div>
 </div>
 
-{{ Form::close() }}
-</body>
+{{ Form::close() }} @endsection
+
