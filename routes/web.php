@@ -38,7 +38,10 @@ Route::prefix('admin')->group(function () {
 
 });
 
-Route::prefix('employee')->group(function (){
-    Route::get('myitems','Employee\AssetController@showMyAssets');
+Route::prefix('employee')->group(function () {
+    Route::get('myitems', 'Employee\AssetController@showMyAssets');
+
+    Route::get('borrow', 'Employee\AssetController@borrowAsset');
+    Route::post('borrow', 'Employee\AssetController@saveAsset');
 
 });

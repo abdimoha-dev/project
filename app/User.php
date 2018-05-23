@@ -41,4 +41,8 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Models\Assigned','employeeId','id');
     }
+    public function borrow()
+    {
+        return $this->hasMany('App\Models\Borrow','employeeId','id');
+    }
 }
