@@ -1,13 +1,10 @@
-<head>
-    <title>Assign inventory</title>
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
-</head>
-<body>
+@extends('layouts.app')
+@section('content')
+    <div class="form-group">
 {{ Form::open(['url'=>'admin/assign/{userId}', 'role' =>'form'])  }}
 @csrf
 <div class="box-body">
-    <div class="row">
+
         <h3 class="box-title">Assignment Details</h3>
 
         <div class="col-md-4">
@@ -85,7 +82,7 @@
             Add Item
         </button>
     </div>
-</div>
 
 {{ Form::close() }}
-</body>
+    </div>
+@endsection

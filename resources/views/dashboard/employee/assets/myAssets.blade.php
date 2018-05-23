@@ -1,8 +1,5 @@
-<html>
-<head>
-    <title>My Assets</title>
-</head>
-<body>
+@extends('layouts.app')
+@section('contenct')
 <table class="table table-condensed">
     <thead>
     <tr>
@@ -31,6 +28,5 @@
     </tbody>
 
 </table>
-</body>
-</html>
+@endsection
 

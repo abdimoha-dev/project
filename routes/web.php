@@ -28,6 +28,7 @@ Route::prefix('admin')->group(function () {
     Route::get('categories', 'Admin\StockController@addCategory');
     Route::post('categories', 'Admin\StockController@saveCategory');
 
+    //show assets form
     Route::get('stock', 'Admin\StockController@showStockForm');
     Route::post('stock', 'Admin\StockController@saveStock');
 //show all user
@@ -45,8 +46,9 @@ Route::prefix('admin')->group(function () {
     Route::get('generate-pdf', 'PdfGenerateController@pdfview')->name('generate-pdf');});
 
 Route::prefix('employee')->group(function () {
+    //show assets assigned
     Route::get('myitems', 'Employee\AssetController@showMyAssets');
-
+//request an asset
     Route::get('borrow', 'Employee\AssetController@borrowAsset');
     Route::post('borrow', 'Employee\AssetController@saveAsset');
 
