@@ -43,7 +43,8 @@ Route::prefix('admin')->group(function () {
     //show all assets borrow requests
     Route::get('borrow/requests', 'Admin\AssetController@showBorrowRequests');
 
-    Route::get('generate-pdf', 'PdfGenerateController@pdfview')->name('generate-pdf');});
+    Route::get('pdf', 'PdfGenerateController@pdf');
+});
 
 Route::prefix('employee')->group(function () {
     //show assets assigned
