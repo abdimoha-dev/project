@@ -16,7 +16,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Setting up on Localhost
 For first time set up, open a terminal and change the prompt to the directory where you intend to store the project for development purposes.
 Follow the steps given below;
-* `git clone git@xanda.tospay.net:WebApps/elimufront.com.git`
+* `git clone https://github.com/abdy254/project`
 * `cd project.test`
 * `git fetch --all`
 * `git checkout develop`
@@ -25,6 +25,7 @@ Follow the steps given below;
 * `npm run dev`
 * `cp .env.localhost .env`
 * `php artisan migrate:fresh --seed`
+
 
 You may now open the project in your IDE or Text Editor of choice to start coding. For live reloading your changes in a browser while coding, use the following command; `npm run watch`.
 By default the project will automatically open in a new browser window or tab with the url `http://localhost:3000`. The port may vary depending on the environment and port configuration. 

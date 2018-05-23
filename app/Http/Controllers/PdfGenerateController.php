@@ -15,20 +15,12 @@ class PdfGenerateController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function htmltopdfview(Request $request)
+    public function pdf()
     {
-        $users = DB::table("asigns")->get();
-        view()->share('users',$users);
+        $assets=Assigned::all();
+        $pdf=PDF::loadView('dashboard.admin.assets.assignedAssets',['assets'=>$assets]);
+        return $pdf->download('assets.pdf');
 
-        if($request->has('download')){
-            // Set extra option
-            PDF::setOptions(['dpi' => 150, 'defaultFont' => 'sans-serif']);
-            // pass view file
-            $pdf = PDF::loadView('dashboard/admin/assets/assignedAssets');
-            // download pdf
-            return $pdf->download('pdfview.pdf');
-        }
-        return view('dashboard/admin/assets/assignedAssets');
 
     }
 }

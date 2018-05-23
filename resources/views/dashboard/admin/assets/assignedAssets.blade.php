@@ -1,29 +1,27 @@
-@extends('layouts.app')
-@section('content')
-<a href="{{ route('generate-pdf',['download'=>'pdf']) }}">Download PDF</a>
-<table class="table table-condensed">
-    <thead>
+<html>
+<head>
+    <title>Assets</title>
+    <a href="{{ url('admin/pdf')}}">Download PDF</a>
+
+</head>
+
+<body>
+<table>
     <tr>
         <th> Category</th>
         <th>Item</th>
         <th>Serial Number</th>
         <th>employeeId</th>
     </tr>
-    </thead>
-    <tbody>
-    @if(count($assets) > 0)
-        @foreach ($assets as $asset)
-            <tr>
-                <td>{{$asset->category}}</td>
-                <td>{{$asset->ItemName}}</td>
-                <td>{{$asset->serialNumber}}</td>
-                <td>{{$asset->employeeId}}</td>
+    @foreach($assets as $asset)
+        <tr>
 
-                <td></td>
-
-            </tr>
+            <td>{{$asset->category}}</td>
+            <td>{{$asset->ItemName}}</td>
+            <td>{{$asset->serialNumber}}</td>
+            <td>{{$asset->employeeId}}</td>
+        </tr>
         @endforeach
-    @endif
-    </tbody>
 </table>
-@endsection
+</body>
+</html>
