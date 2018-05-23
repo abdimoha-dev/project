@@ -36,6 +36,9 @@ Route::prefix('admin')->group(function () {
     Route::get('assign/{userId}', 'Admin\DistributeController@showAssignForm');
     Route::post('assign/{userId}', 'Admin\DistributeController@distribute');
 
+    //show all assets borrow requests
+    Route::get('borrow/requests','Admin\AssetController@showBorrowRequests');
+
 });
 
 Route::prefix('employee')->group(function () {
