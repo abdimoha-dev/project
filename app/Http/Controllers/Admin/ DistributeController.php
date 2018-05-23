@@ -14,6 +14,9 @@ use PhpParser\Node\Expr\Assign;
 
 class  DistributeController extends Controller
 {
+    /**
+     * show all employees
+     */
     public function showAllUser()
     {
         return view('dashboard.admin.users.employees', [
@@ -21,32 +24,43 @@ class  DistributeController extends Controller
         ]);
     }
 
-    public function showAssignForm()
+    /*
+     * display assets assignment form
+     */
+    public function showAssignForm($userId)
     {
         return view('dashboard.admin.assets.assignments', [
             'assets' => Asset::get(['categoryId', 'name']),
+            'userId' => $userId
         ]);
     }
 
-    public function distribute(Request $request,$userId)
+    /*
+     * @param Request $request
+     * save assigned assets
+     */
+    public function distribute(Request $request)
     {
-//       dd($request->toArray());
 
         Assigned::create([
             'category'     => $request->category,
             'ItemName'     => $request->itemName,
             'duration'     => $request->duration,
             'serialNumber' => $request->serialNumber,
-            'employeeId'   => $userId,
+            'employeeId'   => $request->user_id,
             'issuedBy'     => auth()->user()->id,
         ]);
+        return redirect('home')->with(session()->flash('success-message', ['Details Added Successfull ']));
 
     }
 
+    /**
+     * //show all assigned assets
+     */
     public function showAssignedAssets()
     {
-        return view('dashboard/admin/assets/assignedAssets',[
-            'assets'=>Assigned::get(),
+        return view('dashboard/admin/assets/assignedAssets', [
+            'assets' => Assigned::get(),
         ]);
     }
 }

@@ -8,6 +8,9 @@ use App\Http\Controllers\Controller;
 
 class AssetController extends Controller
 {
+    /**
+     * display all borrowing requests from employees
+     */
     public function showBorrowRequests()
     {
         return view('dashboard.admin.users.borrow',[

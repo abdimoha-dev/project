@@ -13,7 +13,7 @@
                             </div>
                         @endif
 
-                        <div class="topnav">
+                            <nav class="navbar navbar-default">
                             @if(auth()->user()->role=='EMPLOYEE')
                                 <a class="active" href="{{url('employee/myitems')}}">View My Assets</a>
                                 <a href="{{url('employee/borrow')}}">Borrow Asset</a>
@@ -23,8 +23,8 @@
                                 <a href="{{url('admin/employees')}}">Distribute Assets</a>
                                 <a href="{{url('admin/assets/assigned')}}">Assigned Assets</a>
                                 @endif
+                            </nav>
 
-                        </div>
                     </div>
                 </div>
             </div>

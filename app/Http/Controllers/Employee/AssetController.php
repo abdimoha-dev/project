@@ -11,6 +11,9 @@ use App\Http\Controllers\Controller;
 
 class AssetController extends Controller
 {
+    /**
+     * display assets assigned per user
+     */
     public function showMyAssets()
     {
         return view('dashboard.employee.assets.myAssets', [
@@ -18,13 +21,18 @@ class AssetController extends Controller
         ]);
     }
 
+    /**
+     * Display available assets categories
+     */
     public function borrowAsset()
     {
         return view('dashboard.employee.assets.borrow', [
             'assets' => Category::get(['name', 'id']),
         ]);
     }
-
+/*
+ * save borrowing requests
+ */
     public function saveAsset(BorrowRequest$request)
     {
         Borrow::create([

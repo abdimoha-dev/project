@@ -19,6 +19,9 @@ class StockController extends Controller
         return view('dashboard.admin.assets.category');
     }
 
+    /**
+     * show form for adding assets
+     */
     public function showStockForm()
     {
         return view('dashboard.admin.assets.assets', [
@@ -38,6 +41,8 @@ class StockController extends Controller
             'brand'        => $request->brand,
             'quantity'     => $request->quantity,
         ]);
+
+        return redirect('home')->with(session()->flash('success-message', ['Details Added Successfull ']));
     }
 
 
@@ -51,5 +56,8 @@ class StockController extends Controller
         Category::create([
             'name' => $request->name,
         ]);
+
+        return redirect('home')->with(session()->flash('success-message', ['Details Added Successfull ']));
+
     }
 }
