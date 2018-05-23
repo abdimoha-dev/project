@@ -15,7 +15,7 @@
                     <p class="help-block text-danger">
                         <i class="fa fa-exclamation-triangle fa-fw"></i> {{ $errors->first('name') }}
                     </p>
-                @endifa
+                @endif
             </div>
         </div>
     </div>
