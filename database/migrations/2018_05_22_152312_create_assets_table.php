@@ -18,7 +18,6 @@ class CreateAssetsTable extends Migration
             $table->string('fillerId');
             $table->string('categoryId');
             $table->string('name');
-            $table->string('serialNumber');
             $table->string('brand');
             $table->string('quantity');
             $table->timestamps();

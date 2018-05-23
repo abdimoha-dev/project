@@ -17,7 +17,6 @@ class User extends Authenticatable
     protected $guarded = [];
     protected $fillable = [
         'name',
-        'employeeId',
         'department',
         'email',
         'password',
@@ -36,5 +35,10 @@ class User extends Authenticatable
     public function asset()
     {
         return $this->hasMany('App\Models\Asset','fillerId','id');
+    }
+
+    public function assign()
+    {
+        return $this->hasMany('App\Models\Assigned','employeeId','id');
     }
 }

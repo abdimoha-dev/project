@@ -4,7 +4,7 @@ namespace App\Http\Requests\Admin;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StockRequest extends FormRequest
+class  DistributeRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,8 +24,11 @@ class StockRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'         => 'required',
+            'categoryId'   => 'required',
+            'ItemName'     => 'required',
             'brand'        => 'required',
+            'duration'     => 'required',
+            'serialNumber' => 'required',
             'quantity'     => 'required',
         ];
     }
@@ -33,9 +36,12 @@ class StockRequest extends FormRequest
     public function messages()
     {
         return [
-            'name.required'         => 'please enter your name',
-            'brand.required'        => 'please enter your brand',
-            'quantity.required'     => 'please enter your quantity',
+            'categoryId.required'   => 'please',
+            'ItemName.required'     => 'please',
+            'brand.required'        => 'please',
+            'serialNumber.required' => 'please',
+            'quantity.required'     => 'please',
+
 
         ];
     }

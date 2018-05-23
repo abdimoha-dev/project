@@ -16,7 +16,6 @@ class UsersTableSeeder extends Seeder
             #Admini Account
             'admin' => [
                 'name'       => 'Abdi Mohammed',
-                'employeeId' => 'GH504',
                 'department' => 'IT',
                 'email'      => 'abdymohammed@gmail.com',
                 'phone'      => '+254712000000',
@@ -29,7 +28,6 @@ class UsersTableSeeder extends Seeder
 #employee Account
             'employee' => [
                 'name'       => 'Joan Kitulo',
-                'employeeId' => 'MH501',
                 'department' => 'Finance',
                 'email'      => 'joan@gmail.com',
                 'phone'      => '+254716700000',

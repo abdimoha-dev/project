@@ -24,9 +24,16 @@ Route::get('/home', 'HomeController@index')->name('home');
 ###############################################################
 
 Route::prefix('admin')->group(function () {
-    Route::get('categories','Admin\StockController@addCategory');
-    Route::post('categories','Admin\StockController@saveCategory');
+    //Show Categories Form
+    Route::get('categories', 'Admin\StockController@addCategory');
+    Route::post('categories', 'Admin\StockController@saveCategory');
 
     Route::get('stock', 'Admin\StockController@showStockForm');
     Route::post('stock', 'Admin\StockController@saveStock');
+//show all user
+    Route::get('employees', 'Admin\DistributeController@showAllUser');
+//assign to specific user
+    Route::get('assign/{userId}', 'Admin\DistributeController@showAssignForm');
+    Route::post('assign/{userId}', 'Admin\DistributeController@distribute');
+
 });

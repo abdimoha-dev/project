@@ -17,7 +17,6 @@ use Illuminate\Support\Facades\Hash;
 $factory->define(App\User::class, function (Faker $faker) {
     return [
         'name'           => $faker->name,
-        'employeeId'     => $faker->numberBetween($min = 1000, $max = 9000),
         'department'     => $faker->name,
         'email'          => $faker->unique()->safeEmail,
         'phone'          => $faker->phoneNumber,
