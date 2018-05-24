@@ -17,7 +17,6 @@ class PdfGenerateController extends Controller
      */
     public function pdf()
     {
-
         $assets=Assigned::all();
         $pdf=PDF::loadView('dashboard.admin.assets.assignedAssets',['assets'=>$assets]);
         return $pdf->download('assets.pdf');
