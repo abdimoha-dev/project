@@ -63,4 +63,11 @@ class  DistributeController extends Controller
             'assets' => Assigned::get(),
         ]);
     }
+/*
+ * Display admin response form for Employee asset request
+ */
+    public function showResponseForm()
+    {
+        return view('dashboard/admin/users/response');
+    }
 }
