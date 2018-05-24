@@ -18,3 +18,41 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+###############################################################
+######################ADMIN####################################
+###############################################################
+
+Route::prefix('admin')->group(function () {
+    //Show Categories Form
+    Route::get('categories', 'Admin\StockController@addCategory');
+    Route::post('categories', 'Admin\StockController@saveCategory');
+
+    //show assets form
+    Route::get('stock', 'Admin\StockController@showStockForm');
+    Route::post('stock', 'Admin\StockController@saveStock');
+//show all user
+    Route::get('employees', 'Admin\DistributeController@showAllUser');
+//assign to specific user
+    Route::get('assign/{userId}', 'Admin\DistributeController@showAssignForm');
+    Route::post('assign', 'Admin\DistributeController@distribute');
+
+    //show assigned assets
+    Route::get('assets/assigned', 'Admin\DistributeController@showAssignedAssets');
+
+    //show all assets borrow requests
+    Route::get('borrow/requests', 'Admin\AssetController@showBorrowRequests');
+
+    Route::get('pdf', 'PdfGenerateController@pdf');
+});
+
+Route::prefix('employee')->group(function () {
+    //show assets assigned
+    Route::get('myitems', 'Employee\AssetController@showMyAssets');
+//request an asset
+    Route::get('borrow', 'Employee\AssetController@borrowAsset');
+    Route::post('borrow', 'Employee\AssetController@saveAsset');
+
+});
+
+
