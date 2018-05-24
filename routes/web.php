@@ -23,7 +23,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 ######################ADMIN####################################
 ###############################################################
 
-Route::prefix('admin')->group(function () {
+Route::prefix('admin')->middleware('auth')->group(function () {
     //Show Categories Form
     Route::get('categories', 'Admin\StockController@addCategory');
     Route::post('categories', 'Admin\StockController@saveCategory');
@@ -37,6 +37,9 @@ Route::prefix('admin')->group(function () {
     Route::get('assign/{userId}', 'Admin\DistributeController@showAssignForm');
     Route::post('assign', 'Admin\DistributeController@distribute');
 
+    //Respond to employee asset request
+    Route::get('response','Admin\DistributeController@showResponseForm');
+
     //show assigned assets
     Route::get('assets/assigned', 'Admin\DistributeController@showAssignedAssets');
 
@@ -46,7 +49,7 @@ Route::prefix('admin')->group(function () {
     Route::get('pdf', 'PdfGenerateController@pdf');
 });
 
-Route::prefix('employee')->group(function () {
+Route::prefix('employee')->middleware('auth')->group(function () {
     //show assets assigned
     Route::get('myitems', 'Employee\AssetController@showMyAssets');
 //request an asset

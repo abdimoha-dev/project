@@ -22,7 +22,7 @@
                                 <a href="{{url('admin/stock')}}">Enter New Assets</a>
                                 <a href="{{url('admin/employees')}}">Distribute Assets</a>
                                 <a href="{{url('admin/assets/assigned')}}">Assigned Assets</a>
-                                <a href="{{url('admin/borrow/requests')}}">Borrow Request</a>
+                                <a href="{{url('admin/borrow/requests')}}">Borrow Requests</a>
                                 @endif
                             </nav>
 

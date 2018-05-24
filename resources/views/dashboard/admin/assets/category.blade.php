@@ -24,5 +24,6 @@
     </div>
 </div>
 
-{{ Form::close() }} @endsection
+{{ Form::close() }}
+@endsection
 
