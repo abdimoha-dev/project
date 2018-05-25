@@ -21,7 +21,7 @@
 
                 {{--<td><a href="{{url('admin/message/'.$asset->employeeId)}}" class="btn btn-info" role="button">Respond</a></td>--}}
                 <td><a href="#!" class="btn btn-info" role="button">Respond</a></td>
-                <td><a href="{{url('admin/'.$asset->employeeId)}}" class="btn btn-info" role="button">Assign Asset</a></td>
+                <td><a href="{{url('admin/assign/'.$asset->employeeId)}}" class="btn btn-info" role="button">Assign Asset</a></td>
                 <td></td>
 
             </tr>

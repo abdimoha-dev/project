@@ -4,10 +4,10 @@
 @csrf
 <div class="box-body">
     <div class="row">
-        <h3 class="box-title">Add Categories</h3>
+        <h3 class="box-title"></h3>
         <div class="col-md-4">
             <div class="form-group">
-                {{ Form::label('name','Name')  }}
+                {{ Form::label('name','Add Category')  }}
                 {{ Form::text('name',old('name'), ['class'=>'form-control']) }}
                 @if($errors->has('name'))
                     <p class="help-block text-danger">
@@ -26,4 +26,3 @@
 
 {{ Form::close() }}
 @endsection
-
