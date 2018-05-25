@@ -1,10 +1,5 @@
-<html>
-<head>
-<title> All Employees</title>
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
-</head>
-<body>
+@extends('layouts.app')
+@section('content')
 <table class="table table-condensed">
     <thead>
     <tr>
@@ -26,10 +21,12 @@
 
                 <td><a href="{{url('admin/assign/'.$user->id)}}" class="btn btn-info" role="button">Assign Assets</a></td>
                 <td></td>
-
             </tr>
         @endforeach
     @endif
     </tbody>
 </table>
-</body>
+<div class="pagination-wrapper">
+    {{ $users->links() }}
+</div>
+@endsection

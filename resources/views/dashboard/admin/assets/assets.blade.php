@@ -1,12 +1,9 @@
-<head>
-    <title>My inventory</title>
-</head>
-<body>
-{{ Form::open(['url'=>'admin/stock', 'role' =>'form'])  }}
-@csrf
-<div class="box-body">
-    <div class="row">
-        <h3 class="box-title">Stock Details</h3>
+@extends('layouts.app')
+@section('content')
+    {{ Form::open(['url'=>'admin/stock', 'role' =>'form'])  }}
+    @csrf
+    <div class="box-body">
+        <h3 class="box-title">Add Stock</h3>
         <div class="col-md-4">
             <label>Category:</label><br />
             <select name="category" id="category" class="demoInputBox">
@@ -54,13 +51,12 @@
                 @endif
             </div>
         </div>
+        <div class="box-footer">
+            <button type="submit" class="btn btn-primary">
+                Add Item
+            </button>
+        </div>
     </div>
-    <div class="box-footer">
-        <button type="submit" class="btn btn-primary">
-            Add Item
-        </button>
-    </div>
-</div>
 
-{{ Form::close() }}
-</body>
+    {{ Form::close() }}
+@endsection

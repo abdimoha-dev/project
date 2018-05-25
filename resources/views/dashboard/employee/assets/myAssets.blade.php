@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('contenct')
+@section('content')
 <table class="table table-condensed">
     <thead>
     <tr>
@@ -18,7 +18,7 @@
                 <td>{{$asset->ItemName}}</td>
                 <td>{{$asset->duration}}</td>
                 <td>{{$asset->serialNumber}}</td>
-                <td>{{$asset->issuedBy}}</td>
+                <td>Admin</td>
                 <td></td>
                 <td></td>
 
