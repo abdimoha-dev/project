@@ -3,11 +3,11 @@
     <div class="form-group">
 {{ Form::open(['url'=>'admin/assign', 'role' =>'form'])  }}
 @csrf
-<div class="box-body">
+<div class="box-body" style="margin: auto">
 
-        <h3 class="box-title">Assignment Details</h3>
+        <h3 class="box-title" style="text-align: center">Assignment Details</h3>
 
-        <div class="col-md-4">
+        <div class="col-md-4" style="margin: auto">
             <label>Category:</label><br />
             <select name="category" class="demoInputBox">
                 <option value="">Select Category</option>
@@ -19,7 +19,7 @@
         </div>
 
         {!! Form::hidden('user_id', $userId) !!}
-        <div class="col-md-4">
+        <div class="col-md-4" style="margin: auto">
             <label>Item:</label><br />
             <select name="itemName" class="dropdown">
                 <option value="">Select Item</option>
@@ -30,8 +30,8 @@
             </select>
         </div>
 
-        <div class="col-md-4">
-            <div class="form-group">
+        <div class="col-md-4" style="margin: auto">
+            <div class="form-group" >
                 {{ Form::label('brand','Brand')  }}
                 {{ Form::text('brand',old('brand'), ['class'=>'form-control']) }}
                 @if($errors->has('brand'))
@@ -42,7 +42,7 @@
             </div>
         </div>
 
-        <div class="col-md-4">
+        <div class="col-md-4" style="margin: auto">
             <div class="form-group">
                 {{ Form::label('duration','Duration')  }}
                 {{ Form::text('duration',old('duration'), ['class'=>'form-control']) }}
@@ -54,7 +54,7 @@
             </div>
         </div>
 
-        <div class="col-md-4">
+        <div class="col-md-4" style="margin: auto">
             <div class="form-group">
                 {{ Form::label('serialNumber','Serial Number')  }}
                 {{ Form::text('serialNumber',old('serialNumber'), ['class'=>'form-control']) }}
@@ -66,7 +66,7 @@
             </div>
         </div>
 
-        <div class="col-md-4">
+        <div class="col-md-4" style="margin: auto">
             <div class="form-group">
                 {{ Form::label('quantity','Quantity')  }}
                 {{ Form::text('quantity',old('quantity'), ['class'=>'form-control']) }}
@@ -78,7 +78,7 @@
             </div>
         </div>
     </div>
-    <div class="box-footer">
+    <div class="box-footer" style="text-align: center">
         <button type="submit" class="btn btn-primary">
             Add Item
         </button>

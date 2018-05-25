@@ -20,7 +20,7 @@ class  DistributeController extends Controller
     public function showAllUser()
     {
         return view('dashboard.admin.users.employees', [
-            'users' => User::where('role', 'EMPLOYEE')->get(),
+            'users' => User::where('role', 'EMPLOYEE')->paginate(10),
         ]);
     }
 
